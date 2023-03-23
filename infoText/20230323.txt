@@ -1,0 +1,23 @@
+2023-03-23
+vue-advanced강좌 시작
+
+vue init webpack-simple vue-news
+vue create vue-cli3
+
+
+eslint 끄기
+- vue.config.js -> lintOnSave: false,
+
+라우터 설치
+npm i vue-router@3.5.3 --save
+
+npm i vuex@3.6.2  --> 회사에서 해보자, 오늘 안됐던거 이거 영향일수도
+
+
+1. router 설정 index.js내부 설정
+ - views내 router 정보 설정 component 파일들 생성
+
+2. axios 저장
+ - npm i axios --save
+
+ 1) api 관련 정보 설정 js 생성 -> api/index.js 
