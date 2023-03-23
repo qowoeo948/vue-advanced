@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="user in users" v-bind:key="user"> {{ user.title }}</div>
+    <div v-for="user in users" v-bind:key="user.id"> {{ user.title }}</div>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
       this.users = response.data;
     })
     .catch(error => {
-
+      console.log(error);
     })
   }
 }
