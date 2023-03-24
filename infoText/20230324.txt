@@ -1,0 +1,30 @@
+2023-03-24
+1. javascript 비동기에 대한 설명
+1) promise
+ - ex)
+ function callAjax() {
+    return new Promise(function(resolve, reject) {
+        $.ajax({
+            url: "https.....",
+            success: function(data) {
+                resolve(data);
+            }
+        })
+    })
+ }
+
+ callAjax()
+    .then(function(data) {
+        //resolve에서 받은 data가 여기 있게됨
+        //success 로직
+    });
+    .then(function() {  //promise 체이닝도 가능
+
+    })
+
+2. vuex를 이용한 api 상태관리
+ - vue다운 -> npm i vuex@3.6.2
+
+ 1) store를 이용한 actions -> api호출영역
+ 2) store사용하여 views.vue component 개선
+ 3) 동적 라우트 매칭으로 인한 userView연결
