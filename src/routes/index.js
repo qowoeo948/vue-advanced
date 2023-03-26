@@ -19,6 +19,7 @@ export const router = new VueRouter({
         },
         {
             path: '/news',
+            name: 'news',
             component: NewsView,
         },
         {
@@ -27,6 +28,7 @@ export const router = new VueRouter({
         },
         {
             path: '/ask',
+            name: 'ask',
             component: AskView,
         },
         {
@@ -35,6 +37,7 @@ export const router = new VueRouter({
         },
         {
             path: '/jobs',
+            name: 'jobs',
             component: JobsView,
         }
     ]

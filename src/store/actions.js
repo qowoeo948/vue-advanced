@@ -10,6 +10,7 @@ export default {
 
             //위에 문제 해결 (mutations로 넘김)
             context.commit('SET_NEWS', response.data);
+            return response;
           })
           .catch(error => {
             console.log(error);

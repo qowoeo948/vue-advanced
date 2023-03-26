@@ -6,3 +6,11 @@
 - 해당 페이지 컴포넌트로 이동했을 때 받아온 params(id)를 이용해 데이터 표출
 
 2. route trasitions
+
+3. 전체적인 코드 리펙토링
+ - 컴포넌트 기반 공통화, 구조화
+ 
+  (NewsView, AskView, JobsView -> ListItem.vue로 공통화)
+
+  4. 하이 오더 컴포넌트
+  - 컴포넌트의 로직(코드)을 재사용하기 위한 고급기술
