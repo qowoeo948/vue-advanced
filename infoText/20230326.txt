@@ -1,0 +1,8 @@
+2023-03-26
+
+1. ask vue 실습
+- ItemView.vue 생성
+- 라우터에 Itemveiw로 갈 수 있는 라우터 정보 등록
+- 해당 페이지 컴포넌트로 이동했을 때 받아온 params(id)를 이용해 데이터 표출
+
+2. route trasitions
