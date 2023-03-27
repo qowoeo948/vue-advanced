@@ -45,7 +45,7 @@ import bus from "../utils/bus";
 
 export default {
   created() {
-    bus.$emit("start:spinner");
+   /*  bus.$emit("start:spinner");
 
     const name = this.$route.name;
     if (name === "news") {
@@ -78,18 +78,11 @@ export default {
             console.log(error);
           });
       }, 3000);
-    }
+    } */
   },
   computed: {
     listItems() {
-      const name = this.$route.name;
-      if (name === "news") {
-        return this.$store.state.news;
-      } else if (name === "ask") {
-        return this.$store.state.ask;
-      } else if (name === "jobs") {
-        return this.$store.state.jobs;
-      }
+      return this.$store.state.list;
     },
   },
 };

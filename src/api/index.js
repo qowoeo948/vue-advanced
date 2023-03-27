@@ -4,19 +4,39 @@ const config = {
     baseUrl: 'https://api.hnpwa.com/v0/'
 }
 
-function fetchNewsList() {
+async function fetchNewsList() {
     /* return axios.get(config.baseUrl + '/news/1.json'); */
-    return axios.get(`${config.baseUrl}news/1.json`);
+
+    try {
+        return axios.get(`${config.baseUrl}news/1.json`);
+    } catch(error) {
+        console.log(error);
+    }
 }
 
-function fetchAskList() {
-    /* return axios.get(config.baseUrl + '/news/1.json'); */
-    return axios.get(`${config.baseUrl}ask/1.json`);
+async function fetchAskList() {
+    try {
+        return axios.get(`${config.baseUrl}ask/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-function fetchJobsList() {
-    /* return axios.get(config.baseUrl + '/news/1.json'); */
-    return axios.get(`${config.baseUrl}jobs/1.json`);
+async function fetchJobsList() {
+    try {
+        return axios.get(`${config.baseUrl}jobs/1.json`); 
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// news, ask, jobs 한방에
+async function fetchList(pageName) {
+    try {
+        return axios.get(`${config.baseUrl}${pageName}/1.json`);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 function fetchUserInfo(username) {
@@ -31,6 +51,7 @@ export {
     fetchNewsList,
     fetchAskList,
     fetchJobsList,
+    fetchList,
     fetchUserInfo,
     fetchItemInfo
 }

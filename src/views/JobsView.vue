@@ -30,7 +30,9 @@
 
 <script>
 import ListItem from '../components/ListItem.vue';
+import ListMixin from '../mixins/ListMixin'
 /* import bus from "../utils/bus"; */
+
 
 export default {
   components: {
@@ -47,7 +49,8 @@ export default {
           console.log(error);
         });
     }, 3000); */
-  }
+  },
+  mixins: [ListMixin]
 };
 </script>
 

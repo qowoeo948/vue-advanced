@@ -1,8 +1,9 @@
-import { fetchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchItemInfo } from '../api/index'
+import { fetchNewsList, fetchAskList, fetchJobsList, fetchUserInfo, fetchItemInfo, fetchList } from '../api/index'
 
 export default {
-    FETCH_NEWS(context) {
-        fetchNewsList()
+    //promise
+    /* FETCH_NEWS(context) {
+        return fetchNewsList()
         .then(response => {
             //(Backend에서 가져온) actions에서 state로 바로 넘길수 없다
             // actions -> mutations -> state 순으로 가야함
@@ -15,28 +16,54 @@ export default {
           .catch(error => {
             console.log(error);
           })
+    }, */
+
+    //async
+    async FETCH_NEWS(context) {
+        const response = await fetchNewsList();
+        context.commit('SET_NEWS', response.data);
+        return response;
     },
-    FETCH_ASK(context) {
-        fetchAskList()
+
+    //promise
+  /*   FETCH_ASK(context) {
+        return fetchAskList()
         .then(response => {
             context.commit('SET_ASK', response.data);
         })
         .catch(error => {
             console.log(error);
         })
+    }, */
+
+    //async
+    async FETCH_ASK(context) {
+        const response = await fetchAskList();
+        context.commit('SET_ASK', response.data);
+        return response;
     },
+
+    //promise
     //이렇게 쓸수도있대
-    FETCH_JOBS({ commit }) { 
-        fetchJobsList()
+    /* FETCH_JOBS({ commit }) { 
+        return fetchJobsList()
         .then(({ data }) => {
             commit('SET_JOBS', data);
         })
         .catch(error => {
         console.log(error);
         })
-      } ,
+      } , */
+
+      //async
+    async FETCH_JOBS(context) {
+        const response = await fetchJobsList();
+        context.commit('SET_JOBS', response.data);
+        return response;
+    },
+
     FETCH_USER(context, userName) {
-        fetchUserInfo(userName)
+        return fetchUserInfo(userName)
         .then(response => {
             context.commit('SET_USER', response.data);
         })
@@ -45,12 +72,31 @@ export default {
         })
     },
     FETCH_ITEM(context, item) {
-        fetchItemInfo(item)
+        return fetchItemInfo(item)
         .then(response => {
             context.commit('SET_ITEM', response.data);
         })
         .catch(error => {
             console.log(error);
         }) 
+    },
+
+    //promise
+    /* FETCH_LIST(context, pageName) {
+        return fetchList(pageName)
+        .then(response => {
+            context.commit('SET_LIST', response.data);
+            return response;
+        })
+        .catch(error => {
+            console.log(error);
+        }) 
+    } */
+
+    //async
+    async FETCH_LIST(context, pageName) {
+        const response = await fetchList(pageName);
+        context.commit('SET_LIST', response.data);
+        return response;
     }
 }
